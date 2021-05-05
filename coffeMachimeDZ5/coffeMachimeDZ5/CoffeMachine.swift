@@ -13,18 +13,36 @@ class CoffeMachine{
     var garbageTank = 0
     
 
-    func drinkPrepare(drink: DrinksType ) -> String {
+    func drinkPrepare(drink: DrinksType) -> String {
+       var list: String = ""
         if coffeeTank >= drink.coffeeNeeded && waterTank >= drink.waterNeeded && milkTank >= drink.milkNeeded && garbageTank < 50 {
             coffeeTank -= drink.coffeeNeeded
             waterTank -= drink.waterNeeded
             milkTank -= drink.milkNeeded
             garbageTank += drink.garbage
             return"Your \(drink), Sir!"
-        } else {
-            return"Not enough ingredients"
         }
-    }
+        if  coffeeTank <= drink.coffeeNeeded{
+           list = "need coffee"
+            
+            }
+        if waterTank <= drink.waterNeeded{
+            list = "need water"
+        }
+        if milkTank <= drink.milkNeeded{
+            list = "need milk"
+        }
+        if garbageTank >= 50{
+            list = "clean garbage"
+        }
+        return list
+        }
+    
+    
+    
 
+    
+    
 
 func addWater() -> String{
     waterTank += 500
