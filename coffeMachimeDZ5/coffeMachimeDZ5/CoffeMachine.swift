@@ -9,7 +9,7 @@ import UIKit
 class CoffeMachine{
     var waterTank = 0
     var coffeeTank = 0
-    var milkTank = 0
+    var milkTank = 1
     var garbageTank = 0
     
 
@@ -49,7 +49,7 @@ func addWater() -> String{
     return"add water"
 }
 func addCoffee() -> String{
-    coffeeTank += 10
+    coffeeTank += 50
     return"add coffee"
 }
 func addMilk() -> String{
